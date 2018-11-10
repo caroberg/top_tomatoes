@@ -8,7 +8,9 @@ class TopTomatoes::CLI
   
   def list_films 
     puts "Today's top films in a theater near you:"
-    @films = TopTomatoes::Film.today
+    @films = TopTomatoes::Film.today 
+    @films.each.with_index(1) do |film, i| 
+      puts "#{i}. #{film.title} - #{film.review_rating}"
   end
   
   def menu 
@@ -17,7 +19,8 @@ class TopTomatoes::CLI
       puts "Enter the number of the film you would like more information on or type 'list' to see the list again or type 'exit'." 
       input = gets.strip.downcase 
       if input.to_i > 0 
-        puts @films[input.to_i-1]
+        the_film = @films[input.to_i-1]
+        puts "#{film.title} - #{film.review_rating}"
       elsif input == "list"
         list_films 
       else 

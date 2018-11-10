@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'pry'
 require 'open-uri'
-#require 'colorize'
+require 'colorize'
 
 require_relative "./top_tomatoes/version"
 require_relative './top_tomatoes/cli'
