@@ -11,6 +11,7 @@ class TopTomatoes::CLI
     @films = TopTomatoes::Film.today 
     @films.each.with_index(1) do |film, i| 
       puts "#{i}. #{film.title} - #{film.review_rating}"
+    end
   end
   
   def menu 
