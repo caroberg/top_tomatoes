@@ -18,32 +18,25 @@ class TopTomatoes::Film
    def self.scrape_films
     page = Nokogiri::HTML(open("https://www.rottentomatoes.com/top/bestofrt/"))
     top_films = []
+    base_path = 'https://www.rottentomatoes.com'
+    film_url = page.css(".movie_list#Top-Box-Office a").attr("href").value 
     
-    page.css(".movie_list#Top-Box-Office").each do |film| 
-       #review_rating = page.css("span.tMeterScore").text
-      
+    page.css(".movie_list#Top-Box-Office").each do |film|
+       title = page.css(".movie_list#Top-Box-Office a").attr("href").value.gsub("/m/", '')
+       review_rating = page.css("#Top-Box-Office span.tMeterScore").first.text
+       url = (base_path + "#{film_url}")
     
-    binding.pry 
-    
-    
+       
+       film_info = {:title => title, 
+                    :review_rating => review_rating, 
+                    :url => url} 
+       top_films << film_info 
+       
+       binding.pry 
+      end 
+     top_films 
   end
     
-    
-    
-    
-    
-    
-   
-    
-    
-    # page.css(".card-ui").each do |getaway| 
-     #   title = getaway.css(".cui-udc-title-with-subtitle").text.gsub("\n", "").strip
-      #  rating = getaway.css("ul.rating").first.attr("data-bhc").gsub("deal-review-rating:", "")
-       # price = getaway.css(".cui-price-discount").text.gsub("From ", "").gsub("/nt", "")
-      #  getaway_url = getaway.css("a").attribute("href").value 
-      
-    end
   
   
   
-end
