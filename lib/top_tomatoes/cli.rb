@@ -1,7 +1,6 @@
 require 'pry'
 
-class TopTomatoes::CLI 
-  attr_accessor :title, :review_rating, :website, :film_website, :film_synopsis, :genre, :film_rating, :director
+class TopTomatoes::CLI
   
   def call 
     puts "Welcome!"
@@ -31,8 +30,6 @@ class TopTomatoes::CLI
         puts "Come back tomorrow for a top films update!"
       else 
         puts "Not sure what you want."
-        
-        binding.pry
       end 
     end  
     
