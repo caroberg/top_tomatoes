@@ -7,12 +7,25 @@ class TopTomatoes::Scraper
     
      website = Nokogiri::HTML(open("https://www.rottentomatoes.com/top/bestofrt/"))
      top_box_office_films = website.css("#Top-Box-Office")
-     movie_collection = top_box_office_films.css("tr.sidebarInTheaterOpening")
- 
-     titles = movie_collection.css("td.middle_col").collect {|top_film| top_film.text.strip}
-     titles.each do |title| 
-       scrape_results << title 
+     movie_collection = top_box_office_films.css("tr.sidebarInTheaterOpening").each do |row| 
+       scrape_results << row
      end
+     i=1 
+     while i < scrape_results.count do 
+       url_name = scrape_results[i].css("a").attr("href").value
+       film_website = "https://www.rottentomatoes.com" + url_name
+       title = scrape_results[i].css("td.middle_col").text.strip
+       film_instance = TopTomatoes::Film.new(title, film_website)
+       i+=1
+     end
+     
+    
+      
+  
+     binding.pry
+     
+    
+     
 
   end
 

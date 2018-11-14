@@ -5,16 +5,17 @@ class TopTomatoes::Film
 
   @@all = []
 
-  def initialize(title, review_rating, film_website)
+  def initialize(title, film_website)
     @title = title
-    @review_rating = review_rating
     @film_website = film_website
     @@all << self
   end
 
   def self.all
     TopTomatoes::Scraper.scrape_top_films_list
-  end
+  end 
+
+
   
 end
     
