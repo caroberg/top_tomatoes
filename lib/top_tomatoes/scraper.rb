@@ -8,11 +8,6 @@ class TopTomatoes::Scraper
       films = page.css("div#homepage-top-box-office.listings")
       film_info = films.css("tr").collect {|row| row}
     
-         
-       
-        
-      
-    
       i=0 
       while i < film_info.count do 
         url_name = film_info[i].css("a").attr("href").value
@@ -23,14 +18,14 @@ class TopTomatoes::Scraper
         instance = TopTomatoes::Film.new(title, review_rating, box_office_revenue, film_url)
         i+=1 
        
-         
+        
       end
     
      
     end
     
     def self.scrape_film(film) 
-       
+       binding.pry
       
     end
     
