@@ -11,14 +11,17 @@ class TopTomatoes::CLI
     TopTomatoes::Scraper.scrape_top_films
     TopTomatoes::Film.all.each.with_index(1) do |film, i| 
       puts "#{i}. #{film.title} - #{film.review_rating} - #{film.box_office_revenue}"
-      film(film)
     end
+      input = gets.strip.to_i - 1  
+      film = TopTomatoes::Film.all[input] 
+      TopTomatoes::Scraper.scrape_film(film) 
+      puts film.description 
+      puts film.genre
+    
    
   end
   
-  def film(film) 
-    TopTomatoes::Scraper.scrape_film(film)
-  end
+ 
 
  
 end

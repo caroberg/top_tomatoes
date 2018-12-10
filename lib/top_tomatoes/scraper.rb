@@ -25,21 +25,16 @@ class TopTomatoes::Scraper
     end
     
     def self.scrape_film(film) 
+     
       
-       page = Nokogiri::HTML(open("https://www.rottentomatoes.com/"))
-       film_info = page.css("div#homepage-top-box-office.listings tr")
-       film.url_name = film_info.css("a").attr("href").value
-       film.film_url = "https://www.rottentomatoes.com" + url_name
        
-       doc = Nokogiri::HTML(open(film_url))
-       film.title = doc.css("#movie-videos-panel h2").text.gsub(" Videos", "")
-       film.review_rating = doc.css("span.meter-value")[0].text
+       doc = Nokogiri::HTML(open(film.film_url))
        film.description = doc.css("div#movieSynopsis").text.gsub("\n", "").gsub("\"", "").strip
        film.director = doc.css("div.meta-value")[3].text.gsub("\n", "").strip
        film.film_rating = doc.css("div.meta-value")[0].text.gsub("\n", "").strip
        film.genre = doc.css("div.meta-value")[1].text.gsub("\n", "").split.join(" ")
-       binding.pry
-      
+       
+     
     end
     
 end
