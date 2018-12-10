@@ -10,7 +10,7 @@ class TopTomatoes::CLI
   def list_films 
     TopTomatoes::Scraper.scrape_top_films
     TopTomatoes::Film.all.each.with_index(1) do |film, i| 
-      puts "#{i}. #{film.title} - #{film.review_rating}"
+      puts "#{i}. #{film.title} - #{film.review_rating} - #{film.box_office_revenue}"
       film(film)
     end
    

@@ -1,7 +1,7 @@
 require 'pry'
 
 class TopTomatoes::Film 
-  attr_accessor :title, :url_name, :film_url, :review_rating, :box_office_revenue, :description, :director, :film_rating
+  attr_accessor :title, :url_name, :film_url, :review_rating, :box_office_revenue, :description, :director, :genre, :film_rating
   @@all = [] 
   
   def initialize(title, review_rating, box_office_revenue, film_url)
@@ -14,6 +14,22 @@ class TopTomatoes::Film
   
   def self.all 
     @@all 
+  end
+  
+  def description 
+    @description 
+  end 
+  
+  def genre
+    @genre
+  end 
+  
+  def director 
+    @director 
+  end 
+  
+  def film_rating 
+    @film_rating 
   end
   
   
