@@ -24,11 +24,11 @@ Run Top Tomatoes by executing ./bin/top_tomatoes
 
 Follow the CLI prompts:
 
-Type the number corresponding to the film in the list, then hit 'Enter' to learn more about the film.
+  -Type the number corresponding to the film in the list, then hit 'Enter' to learn more about the film.
 
-Type 'list' to review today's top ten box office films in theaters.
+  =Type 'list' to review today's top ten box office films in theaters.
 
-Type 'exit' to exit the application
+  -Type 'exit' to exit the application.
 
 ## Development
 
