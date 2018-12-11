@@ -1,10 +1,6 @@
-Welcome to the Daily Rundown of Today's Top Films in Theaters!
-
 # TopTomatoes
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/top_tomatoes`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Welcome to Top Tomatoes! Here you will find information on the nation's top ten box office films currently in theaters. Enjoy!
 
 ## Installation
 
@@ -24,7 +20,15 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Run Top Tomatoes by executing ./bin/top_tomatoes
+
+Follow the CLI prompts:
+
+Type the number corresponding to the film in the list, then hit 'Enter' to learn more about the film.
+
+Type 'list' to review today's top ten box office films in theaters.
+
+Type 'exit' to exit the application
 
 ## Development
 
