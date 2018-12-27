@@ -32,7 +32,6 @@ class TopTomatoes::Film
     @film_rating 
   end
   
-  
 end
     
   
