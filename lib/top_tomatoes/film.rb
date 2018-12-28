@@ -16,24 +16,4 @@ class TopTomatoes::Film
     @@all 
   end
   
-  def description 
-    @description 
-  end 
-  
-  def genre
-    @genre
-  end 
-  
-  def director 
-    @director 
-  end 
-  
-  def film_rating 
-    @film_rating 
-  end
-  
 end
-    
-  
-  
-  
